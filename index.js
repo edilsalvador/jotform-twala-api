@@ -27,7 +27,7 @@ app.post('/', (req, res) => {
   // call Twala API send endpoint
   TWALA_API.send(payload)
     .then(response => {
-      if (response.is_sent) {
+      if (response.data.is_sent) {
         res.redirect(301, '/success');
       } else {
         res.redirect(401, '/failed');
